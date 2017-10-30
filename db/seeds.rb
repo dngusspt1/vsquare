@@ -5,3 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+require 'csv'
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'stores.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+csv.each do |row|
+    t = Store.new
+
+    t.name = row['name']
+    t.location = row['location']
+    t.number = row['number']
+    t.time = row['time']
+    t.image = row['image']
+    t.save
+    
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'finds.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
+csv.each do |row|
+    t = Find.new
+    t.name = row['name']
+    t.price = row['price']
+    t.save
+    
+    
+end
