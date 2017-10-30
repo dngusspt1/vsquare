@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1121px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  a:visited, a:link {
+    text-decoration: none;
+    color: black;
+  }
+  .bar{
+    position: relative;
+    min-width: 100%;
+  }
+  nav {
+    height: 80px;
+    background-color: #cccccc;
+    line-height: 80px;
+  }
+  
+  nav::after{
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .nav-logo {
+    font-size: 40px;
+    /*네비바에 넣고자 하는 것이 무엇인지 다시 한 번 생각해보자. 2가지, 로고와 메뉴의 버튼리스트. 로고는 왼쪽이기 때문에 float: left;를 적용한다. */
+    /*여기서 적용하는 float는 다음 등장할 네비바 메뉴를 오른쪽에 위치시키기 위해서도 반드시 필요하다.  */
+    float: left;
+    margin: 0;
+    margin-top: 18px;
+    margin-left: -270px;
+  }
+  .vsi{
+      margin-bottom: 15px;
+      width:50px;
+      height:50px;
+  }
+  .header1 {
+    height: 350px;
+    background-image: url("./bg.jpg");
+    /*배경 이미지가 지정된 영역을 꽉차게 만들어 주는 선언~!*/
+    background-size: cover;
+    /*사진의 정중앙 부분으로 포지션을 위치시키는 선언이다. 'background-position: (X축) (Y축);'의 형식으로 이용한다.*/
+    background-position: center center;
+    color: black;
+    text-align: center;
+  }
+  .header2{
+    height: 650px;
+    background-image: url("./bg.jpg");
+    /*배경 이미지가 지정된 영역을 꽉차게 만들어 주는 선언~!*/
+    background-size: cover;
+    /*사진의 정중앙 부분으로 포지션을 위치시키는 선언이다. 'background-position: (X축) (Y축);'의 형식으로 이용한다.*/
+    background-position: center center;
+    color: black;
+    text-align: center;
+  }
+  .hd-title {
+    font-size: 85px;
+    /*불필요한 마진을 없앤다.*/
+    margin-top: 0px;
+    /*아래의 글과 간격을 두기 위해 'margin-bottom'값을 설정한다.*/
+    margin-bottom: 20px;
+    padding-top: 100px;
+    color: #2c3e50;
+  }
+  .abc{
+      font-size:35px;
+  }
+  .sectiona {
+    text-align: center;
+    padding: 100px 0;
+  
+  }
+  
+  .sectiona::after {
+    content:" ";
+    display: block;
+    clear: both;
+  }
+  
+  
+  .sectiona article {
+    float: left;
+    width: 500px;
+    margin-right: 140px;
+  }
+  
+  
+  .sectiona article:last-child {
+    margin-right: 0;
+  }
+  
+  .sectiona article img {
+    width: 100%;
+    height: 600px;
+  }
+  
+  .sectiona article p {
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  
+  .footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #cccccc;
+    font-weight: 5px;
+  }
+  .footer p{
+      font-size:20px;
+  }
+
+}
+@media screen and (min-width: 768px) and (max-width: 1120px) {
+      body{
+      position: relative;
+      margin:0;
+      padding:0;
+      background-image: url("https://vsquare-dngusspt1.c9users.io/bg.png");
+      background-size: cover;
+      background-position: center center;
+      height:1366px;
+  }
+  a:visited, a:link {
+    text-decoration: none;
+    color: black;
+  }
+  .bar{
+    position: relative;
+    min-width: 100%;
+  }
+  nav {
+    height: 80px;
+    background-color: #cccccc;
+    line-height: 80px;
+  }
+  
+  nav::after{
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .nav-logo {
+    font-size: 40px;
+    /*네비바에 넣고자 하는 것이 무엇인지 다시 한 번 생각해보자. 2가지, 로고와 메뉴의 버튼리스트. 로고는 왼쪽이기 때문에 float: left;를 적용한다. */
+    /*여기서 적용하는 float는 다음 등장할 네비바 메뉴를 오른쪽에 위치시키기 위해서도 반드시 필요하다.  */
+    float: left;
+    margin: 0;
+    margin-top: 18px;
+  }
+  .vsi{
+      margin-bottom: 15px;
+      width:50px;
+      height:50px;
+  }
+  .header1 {
+    height: 300px;
+    background-image: url("./bg.jpg");
+    /*배경 이미지가 지정된 영역을 꽉차게 만들어 주는 선언~!*/
+    background-size: cover;
+    /*사진의 정중앙 부분으로 포지션을 위치시키는 선언이다. 'background-position: (X축) (Y축);'의 형식으로 이용한다.*/
+    background-position: center center;
+    color: black;
+    text-align: center;
+  }
+  .hd-title {
+    font-size: 85px;
+    /*불필요한 마진을 없앤다.*/
+    margin-top: 0px;
+    /*아래의 글과 간격을 두기 위해 'margin-bottom'값을 설정한다.*/
+    margin-bottom: 20px;
+    padding-top: 100px;
+    color: #2c3e50;
+    height:400px;
+  }
+  .abc{
+      font-size:30px;
+  }
+  .abc p{
+    text-align: center;
+  }
+  .sectiona {
+    text-align: center;
+    padding: 80px 0 ;
+    height:900px;
+    
+  
+  }
+  
+  .sectiona::after {
+    content:" ";
+    display: block;
+    clear: both;
+  }
+  
+  
+  .sectiona article {
+    float: left;
+    width: 50%;
+  }
+  
+  .sectiona article:last-child {
+    margin-right: 0;
+  }
+  
+  .sectiona article img {
+    width: 100%;
+    height: 700px;
+  }
+  
+  .sectiona article p {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+    
+  }
+  
+  .footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #cccccc;
+    font-weight: 5px;
+    height:100px;
+  }
+  .footer p{
+      margin-top: 20px;
+      font-size: 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body{
+      position: relative;
+      margin:0;
+      padding:0;
+      background-image: url("https://vsquare-dngusspt1.c9users.io/bg.png");
+      background-size: cover;
+      background-position: center center;
+  }
+  a:visited, a:link {
+    text-decoration: none;
+    color: black;
+  }
+  .bar{
+    position: relative;
+    min-width: 100%;
+  }
+  nav {
+    height: 80px;
+    background-color: #cccccc;
+    line-height: 80px;
+  }
+  
+  nav::after{
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .nav-logo {
+    font-size: 30px;
+    /*네비바에 넣고자 하는 것이 무엇인지 다시 한 번 생각해보자. 2가지, 로고와 메뉴의 버튼리스트. 로고는 왼쪽이기 때문에 float: left;를 적용한다. */
+    /*여기서 적용하는 float는 다음 등장할 네비바 메뉴를 오른쪽에 위치시키기 위해서도 반드시 필요하다.  */
+    float: left;
+    margin: 0;
+    margin-top: 18px;
+  }
+  .vsi{
+      margin-bottom: 15px;
+      width:50px;
+      height:50px;
+  }
+  .header1 {
+    height: 200px;
+    background-image: url("./bg.jpg");
+    /*배경 이미지가 지정된 영역을 꽉차게 만들어 주는 선언~!*/
+    background-size: cover;
+    /*사진의 정중앙 부분으로 포지션을 위치시키는 선언이다. 'background-position: (X축) (Y축);'의 형식으로 이용한다.*/
+    background-position: center center;
+    color: black;
+    text-align: center;
+  }
+  .hd-title {
+    font-size: 40px;
+    /*불필요한 마진을 없앤다.*/
+    margin-top: 0px;
+    /*아래의 글과 간격을 두기 위해 'margin-bottom'값을 설정한다.*/
+    margin-bottom: 20px;
+    padding-top: 60px;
+    color: #2c3e50;
+    height:200px;
+  }
+
+  .abc{
+      font-size: 15px;
+  }
+  .abc p{
+    text-align: center;
+  }
+  .sectiona {
+    text-align: center;
+    padding: 20px 0 ;
+    height: 400px;
+    
+  
+  }
+  
+  .sectiona::after {
+    content:" ";
+    display: block;
+    clear: both;
+  }
+  
+  
+  .sectiona article {
+    float: left;
+    width: 50%;
+  }
+  
+  .sectiona article:last-child {
+    margin-right: 0;
+  }
+  
+  .sectiona article img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .sectiona article p {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+    
+  }
+
+  
+  .footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #cccccc;
+    font-weight: 5px;
+    margin-top: 20px;
+  }
+  .footer p{
+      font-size: 10px;
+  }
+}

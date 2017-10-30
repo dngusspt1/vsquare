@@ -1,0 +1,157 @@
+<header class ="header2">
+    	<div class="hdtitle">
+    <div id="map" style="width:100%;height:600px;"></div>
+    <p class"=abtn">
+<button onclick="setZoomable(false)">지도 확대/축소 끄기</button>
+<button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
+</p>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=81e01e9df0a5b2aa0b541ae45aca55dc"></script>
+
+          <script>
+
+var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+    mapOption = { 
+        center: new daum.maps.LatLng(37.500074, 127.040970), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    }; 
+
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 지도에 마커를 표시합니다 
+
+
+
+var positions = [
+    {
+        content: '<div class="wrap" id="wrap1">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            브이스퀘어(현 위치)' + 
+            '            <div class="close" onclick="closeOverlay(0)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../vs.png" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 강남구 테헤란로34길 21-4 코스트하우스</div>' + 
+            '                <div class="jibun ellipsis">(지번) 서울특별시 강남구 역삼동 723-11</div>' + 
+            '                <div><a href=http://vsquare.cc/" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.500074, 127.040970)}, // 브이스퀘어
+    {
+        content: '<div class="wrap" id="wrap2">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            고갯마루' + 
+            '            <div class="close" onclick="closeOverlay(1)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../gogaemaru.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 강남구 테헤란로28길 27</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 725-12</div>' + 
+            '                <div><a href="http://www.diningcode.com/profile.php?rid=OeZF8URn5ZOF" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.499314, 127.039336)}, // 고갯마루
+    
+    
+    ];
+
+var markers = [];
+var overlays = [];
+
+for (var i = 0; i < positions.length; i ++) {
+    
+    markers[i] = new daum.maps.Marker
+    ({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커의 위치
+        
+    });
+    
+     overlays[i] = new daum.maps.CustomOverlay({
+        content: positions[i].content,
+        position: positions[i].latlng
+    });
+    
+
+    
+     
+        clickHandlers = function() {
+
+         overlays[markers.lastIndexOf(this)].setMap(map);
+         
+
+    };
+
+    
+    // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+    daum.maps.event.addListener(markers[i],'click', clickHandlers);
+
+
+};
+overlays[0] = new daum.maps.CustomOverlay({
+        content: positions[0].content,
+        position: positions[0].latlng,
+        map:map
+    });
+
+function closeOverlay(index) {
+    overlays[index].setMap(null);
+}
+function setZoomable(zoomable) {
+    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+    map.setZoomable(zoomable);    
+}
+</script>
+    	</div>
+    </header>
+
+
+<section class="section"> 
+    <div class="container">
+        <div class="flex">
+            <div class="flex-info">
+                <div class="flex-time">
+                    <h1 class="p">영업 시간</h1>
+                    <% @show.each do |t| %>  
+                    <% if t.id == 7 %>
+                    <p class="time p"><%= t.time %></p>
+                </div>
+                <div class="flex-destination">
+                    <h1 class="p">가게 정보</h1>
+                    <p class="time p">위치 :<%= t.location %></p>
+                    <p class="time p">TEL :<%= t.number %></p>
+                </div>
+            </div>
+        
+            <div class="flex-menu">
+                <h1 class="p">메인 메뉴</h1>
+                <p class="menu p"><%= Find.where(num_id:5).first.name %> : <%= @abc.find(34).price %></p>
+                <p class="menu p"><%= Find.where(num_id:5).second.name %> : <%= @abc.find(35).price %></p>
+                <p class="menu p"><%= Find.where(num_id:5).third.name %> : <%= @abc.find(36).price %></p>
+                <p class="menu p"><%= Find.where(num_id:5).fourth.name %> : <%= @abc.find(36).price %></p>
+            </div>
+        </div>
+        
+    </div>
+    <% else %>
+  <% end %>
+<% end %>
+</section>
+
+
+<footer class="footer" id="footer1">
+    <div class ="container" >
+    	<p class="p">Copyright(C) 2017 남서울대학교 by 정우현.</p>
+    </div>
+</footer>

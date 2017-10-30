@@ -1,0 +1,350 @@
+<header class ="header2">
+    	<div class="hdtitle">
+    <div id="map" style="width:100%;height:600px;"></div>
+    <p class"=abtn">
+<button onclick="setZoomable(false)">지도 확대/축소 끄기</button>
+<button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
+</p>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=81e01e9df0a5b2aa0b541ae45aca55dc"></script>
+
+          <script>
+
+var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+    mapOption = { 
+        center: new daum.maps.LatLng(37.500074, 127.040970), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    }; 
+
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 지도에 마커를 표시합니다 
+
+
+
+var positions = [
+    {
+        content: '<div class="wrap" id="wrap1">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            브이스퀘어(현 위치)' + 
+            '            <div class="close" onclick="closeOverlay(0)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../vs.png" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울특별시 강남구 테헤란로34길 21-4 코스트하우스</div>' + 
+            '                <div class="jibun ellipsis">(지번) 서울특별시 강남구 역삼동 723-11</div>' + 
+            '                <div><a href=http://vsquare.cc/" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.500074, 127.040970)}, // 브이스퀘어
+    {
+        content: '<div class="wrap"id="wrap2">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            촌빨' + 
+            '            <div class="close" onclick="closeOverlay(1)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../chonbbal.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 테헤란로38길 27</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울 강남구 역삼동 721-3층</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=21225046" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.500813, 127.042776)}, // 촌빨
+    {
+        content: '<div class="wrap" id="wrap3">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            마포만두역삼직영점' + 
+            '            <div class="close" onclick="closeOverlay(2)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../mandoo.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 논현로 429</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 738-9 C and C빌딩</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=34357106&entry=plt&query=%EB%A7%88%ED%8F%AC%EB%A7%8C%EB%91%90%EC%97%AD%EC%82%BC%EC%A7%81%EC%98%81%EC%A0%90" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.499501, 127.037356)}, // 마포만두역삼직영점
+    {
+        content: '<div class="wrap" id="wrap4">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            유연카레' + 
+            '            <div class="close" onclick="closeOverlay(3)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../u-yeon.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 언주로75길 8</div>' + 
+            '                <div class="jibun ellipsis">(지번) 서울 강남구 역삼동 730-14</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=36960041" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.499199, 127.043496)}, // 유연카레역삼점
+    {
+        content: '<div class="wrap" id="wrap5">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            사량도회' + 
+            '            <div class="close" onclick="closeOverlay(4)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../sado.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 역삼로33길 3</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 733-18</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=36449603&entry=plt&query=%EC%82%AC%EB%9F%89%EB%8F%84%ED%9A%8C" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.497664, 127.041759)}, // 사량도회
+    {
+        content: '<div class="wrap" id="wrap6">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            쌀고집' + 
+            '            <div class="close" onclick="closeOverlay(5)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../ssal.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 논현로85길 5-10 </div>' + 
+            '                <div class="jibun ellipsis"> (지번)서울특별시 강남구 역삼동 738-48</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=37779241&entry=plt&query=%EC%8C%80%EA%B3%A0%EC%A7%91" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.498670, 127.037029)}, // 쌀고집
+    {
+        content: '<div class="wrap" id="wrap6">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            호타루' + 
+            '            <div class="close" onclick="closeOverlay(6)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../hotaru.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 테헤란로25길 9-10</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 644-16</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=33351933&entry=plt&query=%ED%98%B8%ED%83%80%EB%A3%A8" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.501557, 127.034744)}, // 호타루
+    {
+        content: '<div class="wrap" id="wrap7">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            삼다연' + 
+            '            <div class="close" onclick="closeOverlay(7)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../samda.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 논현로86길 28</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울 강남구 역삼동 725-23</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=32465140&entry=plt&query=%EC%82%BC%EB%8B%A4%EC%97%B0" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.500249, 127.039814)}, // 삼다연
+    {
+        content: '<div class="wrap" id="wrap8">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            종수네 닭갈비' + 
+            '            <div class="close" onclick="closeOverlay(8)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../galbi.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 언주로85길 23-12</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 723-17</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=90561272" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.500084, 127.041674)}, // 종수네 닭갈비
+    {
+        content: '<div class="wrap" id="wrap9">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            맥도날드' + 
+            '            <div class="close" onclick="closeOverlay(9)" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="img">' +
+            '                <img src="../mac.jpg" width="73" height="70">' +
+            '           </div>' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">서울 강남구 논현로 419</div>' + 
+            '                <div class="jibun ellipsis">(지번)서울특별시 강남구 역삼동 746 P.M.K 빌딩</div>' + 
+            '                <div><a href="https://store.naver.com/restaurants/detail?id=31243682" target="_blank" class="link">홈페이지</a></div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>',
+        latlng: new daum.maps.LatLng(37.497933, 127.038241)} // 맥도날드
+    
+    ];
+
+var markers = [];
+var overlays = [];
+
+for (var i = 0; i < positions.length; i ++) {
+    
+    markers[i] = new daum.maps.Marker
+    ({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커의 위치
+        
+    });
+    
+     overlays[i] = new daum.maps.CustomOverlay({
+        content: positions[i].content,
+        position: positions[i].latlng
+    });
+    
+
+    
+     
+        clickHandlers = function() {
+
+         overlays[markers.lastIndexOf(this)].setMap(map);
+         
+
+    };
+
+    
+    // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+    daum.maps.event.addListener(markers[i],'click', clickHandlers);
+
+
+};
+overlays[0] = new daum.maps.CustomOverlay({
+        content: positions[0].content,
+        position: positions[0].latlng,
+        map:map
+    });
+
+function closeOverlay(index) {
+    overlays[index].setMap(null);
+}
+function setZoomable(zoomable) {
+    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+    map.setZoomable(zoomable);    
+}
+</script>
+    	</div>
+    </header>
+<section id="portfolio">
+    
+      <div class="container">
+        <h1 class="text-center p">근처 식당들...</h1>
+          <div class="row">
+              
+             <div class="col-sm-4 portfolio-item">
+                 <% @show.each do |t| %>  
+                <% if t.id == 11 %>
+                  <img class="img-fluid2" src="../chonbbal/<%= t.image %>" alt="">
+                  <a href="/first"><p class="one p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 12 %>
+                  <img class="img-fluid2" src="../mandoo/<%= t.image %>" alt="">
+                   <a href="/second"> <p class="two p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 13 %>
+                  <img class="img-fluid2" src="../u-yeon/<%= t.image %>" alt="">
+                  <a href="/third"><p class="three p"><%= t.name %></p></a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 14 %>
+                  <img class="img-fluid2" src="../sado/<%= t.image %>" alt="">
+                  <a href="/fourth"><p class="four p"><%= t.name %></p></a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 15 %>
+                  <img class="img-fluid2" src="../ssal/<%= t.image %>" alt="">
+                  <a href="/fifth"><p class="five p"><%= t.name %></p></a>
+              </div>
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 16 %>
+                  <img class="img-fluid2" src="../hotaru/<%= t.image %>" alt="">
+                  <a href="/sixth"><p class="six p" ><%= t.name %></p></a>
+              </div>
+               <div class="col-sm-4 portfolio-item">
+                   <% elsif t.id == 17 %>
+                  <img class="img-fluid2" src="../samda/<%= t.image %>" alt="">
+                  <a href="/seventh"><p class="seven p"><%= t.name %></p></a>
+              </div>
+               <div class="col-sm-4 portfolio-item">
+                   <% elsif t.id == 18 %>
+                  <img class="img-fluid2" src="../galbi/<%= t.image %>" alt="">
+                  <a href="/eighth"><p class="eight p" ><%= t.name %></p></a>
+              </div> 
+              <div class="col-sm-4 portfolio-item">
+                  <% elsif t.id == 19 %>
+                  <img class="img-fluid2" src="../mac./<%= t.image %>" alt="">
+                  <a href="/ninth"><p class="nine p"><%= t.name %></p></a>
+                  
+              </div>
+                
+          </div>
+          <ul class="pagination" style="margin-left:470px;">
+                    <li><a href="/choice">1</a></li>
+                    <li><a href="/choice2">2</a></li>
+                    <li><a href="/ready">3</a></li>
+                    <li><a href="/ready">4</a></li>
+                    <li><a href="/ready">5</a></li>
+                </ul>
+          <% end %>
+      <% end %>
+      </div>
+          
+    </section>
+
+
+<footer class="footer" id="footer1">
+    <div class ="container" >
+    	<p class="p">Copyright(C) 2017 남서울대학교 by 정우현.</p>
+    </div>
+</footer>

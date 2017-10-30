@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+.flex{
+
+    display: flex;
+    flex-direction: row;
+}
+.flex-info {
+    display: flex;
+    flex-direction: column;
+}
+.flex-time {
+    flex-basis: 50%;
+}
+.flex-destination {
+    flex-basis: 50%;
+    margin-top: 80px;
+}
+
+.flex-menu {
+    flex-basis: 50%;
+    margin-left: 200px;
+}
+.time {
+    margin-top: 30px;
+    font-size: 25px;
+}
+.menu {
+    margin-top: 15px;
+    font-size: 25px;
+}
+.menuf {
+    margin-top: 15px;
+    font-size: 18px;
+}

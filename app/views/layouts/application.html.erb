@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv=X-UA-Compatible content="IE=EmulateIE7"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+  <title>VSQUARE</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <script src='//code.jquery.com/jquery.min.js'></script>
+ <script src="/cdn-cgi/apps/head/ptVqbHShJme6XSljp1wt45lK3Ng.js"></script>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css type=text/css rel=stylesheet>
+<script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js></script>
+<script type=text/javascript src=jquery.tinysort.min.js></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<link href=https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css type=text/css rel=stylesheet>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+  
+  <link rel="shortcut icon" href="https://vsquare-dngusspt1.c9users.io//favicon.ico">
+  
+  <style>
+    @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+    .p { font-family: 'Jeju Hallasan'; }
+  </style>
+  
+</head>
+<body>
+    <nav class="bar">
+        <div class="container">
+              <a href="#" onclick="history.back()">
+              <h1 class="nav-logo p"><img class="vsi"
+              src="https://vsquare-dngusspt1.c9users.io/vs.png">
+              VSQUARE</h1></a>
+              <div class="nav-menu">
+                <ul class="nav-tgt-btn">
+                  <% if user_signed_in? %>
+                      <li><%= link_to '홈', '/' %></li>
+                      <li><%= current_user.name %></li>
+                      <li><%= link_to '로그아웃', session_path(current_user), method: 'delete', :onclick => 'alert("로그아웃이 되었습니다.")' %></li>
+                  <% else %>
+                      <li><%= link_to '홈', '/' %></li>
+                      <li><%= link_to '로그인', new_session_path %></li>
+                      <li><%= link_to '회원가입', new_user_path , :id => 'abc' %></li>
+                  <% end %>
+                </ul>
+              </div>
+              
+              
+        </div>
+</nav><br>
+<%= yield %>
+        
+</script>
+</body>
+</html>
