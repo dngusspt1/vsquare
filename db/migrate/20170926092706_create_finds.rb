@@ -1,12 +1,13 @@
 class CreateFinds < ActiveRecord::Migration
   def change
     create_table :finds do |t|
-      t.integer :num_id, unique: true
-      t.string :name , unique: true
-      t.string :price , unique: true
-      t.references :store , unique: true
+      t.string :menu , null: false
+      t.string :menu_price
+      
+      t.belongs_to :store
+      
+      t.timestamps
 
-      t.timestamps null: false
     end
   end
 end
