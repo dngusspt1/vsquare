@@ -5,7 +5,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => :development
+gem 'sqlite3'
 
 
 gem 'materialize-sass'
