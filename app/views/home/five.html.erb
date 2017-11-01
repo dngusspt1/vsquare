@@ -137,14 +137,14 @@ function setZoomable(zoomable) {
         
             <div class="flex-menu">
                 <h1 class="p">점심 메뉴</h1>
-                     <p class="menu p"><%=Find.where(num_id:4).first.name %> : <%= @abc.find(24).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).second.name %> : <%= @abc.find(25).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).third.name %> : <%= @abc.find(25).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).fourth.name %> : <%= @abc.find(25).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).last(5).first.name %> : <%= @abc.find(29).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).last(4).first.name %> : <%= @abc.find(30).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).last(3).first.name %> : <%= @abc.find(30).price %></p>
-                    <p class="menu p"><%= Find.where(num_id:4).last(2).first.name %> : <%= @abc.find(30).price %></p>
+                     <p class="menu p"><%=Find.where(store_id:4).first.menu %> : <%= @abc.find(22).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).second.menu %> : <%= @abc.find(23).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).third.menu %> : <%= @abc.find(23).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).fourth.menu %> : <%= @abc.find(23).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).last(5).first.menu %> : <%= @abc.find(27).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).last(4).first.menu %> : <%= @abc.find(28).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).last(3).first.menu %> : <%= @abc.find(28).menu_price %></p>
+                    <p class="menu p"><%= Find.where(store_id:4).last(2).first.menu %> : <%= @abc.find(28).menu_price %></p>
   
 
                    

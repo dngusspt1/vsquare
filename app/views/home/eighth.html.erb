@@ -139,10 +139,10 @@ function setZoomable(zoomable) {
                 
             <div class="flex-menu">
                 <h1 class="p">점심 메뉴</h1>
-                <p class="menu p"><%= Find.where(num_id:16).first.name %> : <%= @abc.find(101).price %></p>
-                <p class="menu p"><%= Find.where(num_id:16).second.name %> : <%= @abc.find(102).price %></p>
-                <p class="menu p"><%= Find.where(num_id:16).third.name %> : <%= @abc.find(102).price %></p>
-                <p class="menu p"><%= Find.where(num_id:16).last.name %> : <%= @abc.find(102).price %></p>
+                <p class="menu p"><%= Find.where(store_id:16).first.menu %> : <%= @abc.find(99).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:16).second.menu %> : <%= @abc.find(100).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:16).third.menu %> : <%= @abc.find(100).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:16).last.menu %> : <%= @abc.find(100).menu_price %></p>
                 
             </div>
         </div>

@@ -14,25 +14,15 @@
 ActiveRecord::Schema.define(version: 20170928065905) do
 
   create_table "finds", force: :cascade do |t|
-    t.integer  "num_id"
-    t.string   "name"
-    t.string   "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "menu",       null: false
+    t.string   "menu_price"
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  create_table "menus", force: :cascade do |t|
-    t.string   "title"
-    t.string   "price"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "menus", ["title"], name: "index_menus_on_title", unique: true
 
   create_table "stores", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "location"
     t.string   "number"
     t.string   "time"

@@ -136,13 +136,13 @@ function setZoomable(zoomable) {
         
             <div class="flex-menu">
                 <h1 class="p">점심 메뉴</h1>
-                 <p class="menu p"><%= Find.where(num_id:8).first.name %> : <%= @abc.find(46).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).second.name %> : <%= @abc.find(50).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).third.name %> : <%= @abc.find(46).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).fourth.name %> : <%= @abc.find(23).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).fifth.name %> : <%= @abc.find(23).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).last(2).first.name %> : <%= @abc.find(23).price %></p>
-                <p class="menu p"><%= Find.where(num_id:8).last.name %> : <%= @abc.find(23).price %></p>
+                 <p class="menu p"><%= Find.where(store_id:8).first.menu %> : <%= @abc.find(44).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).second.menu %> : <%= @abc.find(48).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).third.menu %> : <%= @abc.find(44).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).fourth.menu %> : <%= @abc.find(21).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).fifth.menu %> : <%= @abc.find(21).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).last(2).first.menu %> : <%= @abc.find(21).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:8).last.menu %> : <%= @abc.find(21).menu_price %></p>
             </div>
         </div>
         

@@ -139,11 +139,11 @@ function setZoomable(zoomable) {
                 
             <div class="flex-menu">
                 <h1 class="p">점심 메뉴</h1>
-                <p class="menu p"><%= Find.where(num_id:10).first.name %> : <%= @abc.find(66).price %></p>
-                <p class="menu p"><%= Find.where(num_id:10).second.name %> : <%= @abc.find(66).price %></p>
-                <p class="menu p"><%= Find.where(num_id:10).third.name %> : <%= @abc.find(68).price %></p>
-                <p class="menu p"><%= Find.where(num_id:10).fourth.name %> : <%= @abc.find(70).price %></p>
-                <p class="menu p"><%= Find.where(num_id:10).last.name %> : <%= @abc.find(70).price %></p>
+                <p class="menu p"><%= Find.where(store_id:10).first.menu %> : <%= @abc.find(64).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:10).second.menu %> : <%= @abc.find(64).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:10).third.menu %> : <%= @abc.find(66).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:10).fourth.menu %> : <%= @abc.find(68).menu_price %></p>
+                <p class="menu p"><%= Find.where(store_id:10).last.menu %> : <%= @abc.find(68).menu_price %></p>
                 <a href="http://mblogthumb3.phinf.naver.net/20160217_62/skfkrneh_1455682127985OEDQ1_JPEG/NaverBlog_20160217_130844_01.jpg?type=w2" class="menu p" target="blank">더 많은 메뉴보러가기</a>
             </div>
         </div>
