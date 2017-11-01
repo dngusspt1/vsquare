@@ -9,7 +9,7 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'store.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'stores.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
 csv.each do |row|
   t = Store.new
@@ -21,10 +21,10 @@ csv.each do |row|
   t.save
 end
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'price.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'finds.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
 csv.each do |row|
-  t = Price.new
+  t = Find.new
   t.menu = row['name']
   t.menu_price = row['price']
   t.store = Store.find(row['num_id'])  
