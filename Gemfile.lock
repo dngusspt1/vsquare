@@ -224,7 +224,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   materialize-sass
-  mysql2
+  mysql2 (~> 0.4.9)
   rails (= 4.2.5)
   rails_db
   sass-rails (~> 5.0)

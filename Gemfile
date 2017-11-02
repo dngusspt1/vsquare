@@ -40,7 +40,7 @@ gem 'figaro'
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2' , '~> 0.4.9'
 end
 
 group :development, :test do
