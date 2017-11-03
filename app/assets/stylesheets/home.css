@@ -248,7 +248,21 @@ input:focus {
     text-align: center;
     margin-right: 30px;
   }
-  
+  .nav-tgt-btn {
+    /*'li' 요소 옆에 따라다니는 흉측한 점을 지우는 선언이다. 반드시 적용하자~*/
+    list-style-type: none;
+    /*불필요한 마진은 없애준다*/
+    margin: 0;
+  }
+  ul.nav-tgt-btn > li {
+    /*애증의 'float'! 버튼을 가로배치 하기 위해서 float: left;를 적용한다. 'ul.nav-btn > li'라고 한 이유는 'nav-btn'이라는 클래스를 가지는 'ul'태그의 'li'태그 3개 각각에 모두 float를 주어야 하기 때문이다~*/
+    float: left;
+    /*버튼 끼리의 간격을 두기 위해 margin 값을 설정한다*/
+    margin-left: 70px;
+    font-size : 25px;
+    font-weight: bold;
+  }
+
     .section{
       padding: 130px 0;
       height: 770px;
@@ -294,27 +308,60 @@ input:focus {
       background-image: url("https://vsquare-dngusspt1.c9users.io/bg.png");
       background-size: cover;
       background-position: center center;
-      height: 750px;
+      height: 700px;
   }
+  .top-box img {display: none;}
     p{
       color: rgb(52, 73, 94);
       
   }
-    #imgone{
-    margin-top: 30px;
-    height:100px;
-    width:100px;
-  }
-  #imgtwo{
-    margin-top: 50px;
-    height:100px;
-    width:190px;
-  }
+   .title-p{
+     
+   }
    .top-box{
      position: relative;
     text-align: center;
     margin-right: 30px;
-    height:300px;
+    height:100px;
+  }
+  .jumbotron{
+    text-align: center;
+    margin-top: 20px;
+    width :375px;
+    height:470px;
+  }
+  .none{
+   margin-top: 10px; 
+   font-size: 12px;
+  }
+  
+  .none > input{
+    margin:10px;
+  }
+  input .pass{
+    float: left;
+  }
+  i {
+    display: none;
+  }
+  .container h1{
+    font-size:24px;
+    padding-right: 10px;
+  }
+  .nav-tgt-btn {
+    /*'li' 요소 옆에 따라다니는 흉측한 점을 지우는 선언이다. 반드시 적용하자~*/
+    list-style-type: none;
+    /*불필요한 마진은 없애준다*/
+    margin: 0;
+  }
+  ul.nav-tgt-btn > li {
+    /*애증의 'float'! 버튼을 가로배치 하기 위해서 float: left;를 적용한다. 'ul.nav-btn > li'라고 한 이유는 'nav-btn'이라는 클래스를 가지는 'ul'태그의 'li'태그 3개 각각에 모두 float를 주어야 하기 때문이다~*/
+    float: left;
+    /*버튼 끼리의 간격을 두기 위해 margin 값을 설정한다*/
+    margin-left: 9px;
+    font-size : 15px;
+    font-weight: bold;
+    margin-top: 35px;
   }
   .swing p{
     margin-top:40px;

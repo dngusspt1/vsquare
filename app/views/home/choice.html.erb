@@ -1,15 +1,15 @@
 <header class ="header2">
     	<div class="hdtitle">
-    <div id="map" style="width:100%;height:600px;"></div>
-    <p class"=abtn">
-<button onclick="setZoomable(false)">지도 확대/축소 끄기</button>
-<button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
-</p>
+    <div id="map1" class="map"></div>
+    <p class="abtn">
+        <button  onclick="setZoomable(false)">지도 확대/축소 끄기</button>
+        <button  onclick="setZoomable(true)">지도 확대/축소 켜기</button>
+    </p>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=81e01e9df0a5b2aa0b541ae45aca55dc"></script>
 
           <script>
 
-var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+var mapContainer = document.getElementById('map1'), // 지도의 중심좌표
     mapOption = { 
         center: new daum.maps.LatLng(37.500074, 127.040970), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
@@ -277,51 +277,51 @@ function setZoomable(zoomable) {
 <section id="portfolio">
     
       <div class="container">
-        <h1 class="text-center p">근처 식당들...</h1>
-          <div class="row">
+        <h1 class="text-center p">회사 근처 식당들...</h1>
+          <div class="row mobile_hide">
               
-             <div class="col-sm-4 portfolio-item">
+             <div class="col-xs-4 col-sm-4 portfolio-item">
                  <% @show.each do |t| %>  
                 <% if t.id == 1 %>
                   <img class="img-fluid" src="../2baek/<%= t.image %>" alt="">
                   <a href="/one"><p class="one p" ><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 2 %>
                   <img class="img-fluid" src="../hyunsung/<%= t.image %>" alt="">
                    <a href="/two"> <p class="two p" ><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 3 %>
                   <img class="img-fluid" src="../sowoo/<%= t.image %>" alt="">
                   <a href="/three"><p class="three p"><%= t.name %>(문 닫음)</p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 4 %>
                   <img class="img-fluid" src="../bookchon/<%= t.image %>" alt="">
                   <a href="/four"><p class="four p"><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 5 %>
                   <img class="img-fluid" src="../yanngja/<%= t.image %>" alt="">
                   <a href="/five"><p class="five p"><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 6 %>
                   <img class="img-fluid" src="../gogaemaru/<%= t.image %>" alt="">
                   <a href="/six"><p class="six p" ><%= t.name %></p></a>
               </div>
-               <div class="col-sm-4 portfolio-item">
+               <div class="col-xs-4 col-sm-4 portfolio-item">
                    <% elsif t.id == 7 %>
                   <img class="img-fluid" src="../sigoal/<%= t.image %>" alt="">
                   <a href="/seven"><p class="seven p"><%= t.name %></p></a>
               </div>
-               <div class="col-sm-4 portfolio-item">
+               <div class="col-xs-4 col-sm-4 portfolio-item">
                    <% elsif t.id == 8 %>
                   <img class="img-fluid" src="../siraeki/<%= t.image %>" alt="">
                   <a href="/eight"><p class="eight p" ><%= t.name %></p></a>
               </div> 
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 9 %>
                   <img class="img-fluid" src="../mac./<%= t.image %>" alt="">
                   <a href="/nine"><p class="nine p"><%= t.name %></p></a>
@@ -330,19 +330,75 @@ function setZoomable(zoomable) {
               </div>
                 
           </div>
-          <ul class="pagination" style="margin-left:470px;">
-                    <li><a href="/choice">1</a></li>
-                    <li><a href="/choice2">2</a></li>
-                    <li><a href="/ready">3</a></li>
-                    <li><a href="/ready">4</a></li>
-                    <li><a href="/ready">5</a></li>
-                </ul>
-
+          <div class="row desktop_hide">
+              
+             <div class="col-xs-4 col-sm-4 portfolio-item">
+                 <% @show.each do |t| %>  
+                <% if t.id == 19 %>
+                  <img class="img-fluid" src="../m.2baek/<%= t.image %>" alt="">
+                  <a href="/one"><p class="one p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 20 %>
+                  <img class="img-fluid" src="../m.hyunsung/<%= t.image %>" alt="">
+                   <a href="/two"> <p class="two p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 21 %>
+                  <img class="img-fluid" src="../m.sowoo/<%= t.image %>" alt="">
+                  <a href="/three"><p class="three p"><%= t.name %>(문 닫음)</p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 22 %>
+                  <img class="img-fluid" src="../m.bookchon/<%= t.image %>" alt="">
+                  <a href="/four"><p class="four p"><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 23 %>
+                  <img class="img-fluid" src="../m.m.yanngja/<%= t.image %>" alt="">
+                  <a href="/five"><p class="five p"><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 24 %>
+                  <img class="img-fluid" src="../m.gogaemaru/<%= t.image %>" alt="">
+                  <a href="/six"><p class="six p" ><%= t.name %></p></a>
+              </div>
+               <div class="col-xs-4 col-sm-4 portfolio-item">
+                   <% elsif t.id == 25 %>
+                  <img class="img-fluid" src="../m.sigoal/<%= t.image %>" alt="">
+                  <a href="/seven"><p class="seven p"><%= t.name %></p></a>
+              </div>
+               <div class="col-xs-4 col-sm-4 portfolio-item">
+                   <% elsif t.id == 26 %>
+                  <img class="img-fluid" src="../m.siraeki/<%= t.image %>" alt="">
+                  <a href="/eight"><p class="eight p" ><%= t.name %></p></a>
+              </div> 
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 27 %>
+                  <img class="img-fluid" src="../m.fish/<%= t.image %>" alt="">
+                  <a href="/nine"><p class="nine p"><%= t.name %></p></a>
+                  
+                  
+              </div>
+                
+          </div>
+       
+                <% end %>
+            <% end %>
           <% end %>
       <% end %>
+       
       </div>
           
     </section>
+    <ul class="pagination">
+            <li><a href="/choice">1</a></li>
+            <li><a href="/choice2">2</a></li>
+            <li><a href="/ready">3</a></li>
+            <li><a href="/ready">4</a></li>
+            <li><a href="/ready">5</a></li>
+        </ul>
+       
 
 
 <footer class="footer" id="footer1">

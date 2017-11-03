@@ -1,4 +1,4 @@
-<header class ="header1">
+<header class ="header1 mobile_hide">
     	<div class="hdtitle">
     		<h2 class="hd-title p">오늘 갈곳은?</h2>
     		<p class="hd-txt"></p>
@@ -33,7 +33,7 @@
 	venues = {
 		"5518"    : "고갯마루",
 		"392360"  : "양 자 강",
-		"2210952" : "현성별당(공사중)",
+		"2210952" : "현성별당",
 		"207306"  : "시 골 집",
 		"41457"   : "북촌순두부",
 		"101161"  : "이 백",
@@ -82,7 +82,7 @@
 		        ).append(
 	                $(document.createElement('label')).attr({
 	                    'for':  'venue-' + key
-	                    ,style: 'font-size:30px;'
+	                    
 	                })
 	                .text( item )
 		        )
@@ -387,37 +387,41 @@
 	}</script>
 	
 	<body>
-		<div id=venues style=float:left>
-			<ul/>
-		</div>
+
 			<div id=wheel>
 				
 				<canvas id=canvas width=1500 height=800></canvas>
-				<p class="vsquare p">↑식당종류와 식당 정보링크↓</p>
-				<div class="box">
-				<a href="../sixt"target="_blank">고갯마루</a>
-				<a href="../four"target="_blank">북촌순두부</a>
-				<a href="../one"target="_blank">이 백</a>
-				<a href="../seven"target="_blank">시 골 집</a>
-				<a href="../five"target="_blank">양 자 강</a>
-				<a href="../two"target="_blank">현성별당</a>
-				<a href="../eight"target="_blank">순남시래기</a>
-				<a href="../nine"target="_blank">피쉬월드</a>
-				<a href="../seventh"target="_blank">삼다연</a>
-				<a href="../first"target="_blank">촌빨</a>
-				<a href="../eighth"target="_blank">종수네 닭갈비</a>
+				<div id=venues style=float:left>
+					<ul/>
 				</div>
-		        </div>
+				<p class="vsquare p mobile_hide">↑식당종류와 식당 정보링크↓</p>
+				<p class="vsquare p desktop_hide">식당 정보링크↓</p>
+				<div class="box">
+					<a href="../sixt"target="_blank">고갯마루</a>
+					<a href="../four"target="_blank">북촌순두부</a>
+					<a href="../one"target="_blank">이 백</a>
+					<a href="../seven"target="_blank">시 골 집</a>
+					<a href="../five"target="_blank">양 자 강</a>
+					<a href="../two"target="_blank">현성별당</a>
+					<a href="../eight"target="_blank">순남시래기</a>
+					<a href="../nine"target="_blank">피쉬월드</a>
+					<a href="../seventh"target="_blank">삼다연</a>
+					<a href="../first"target="_blank">촌빨</a>
+					<a href="../eighth"target="_blank">종수네 닭갈비</a>
+				</div>
+		    </div>
+		
 		<div id=stats>
 			<div id=counter>
 						
 			</div>
 		</div>
+		<footer class="footer2" id="footer1">
+		    <div class ="container" >
+		    	<p class="p">Copyright(C) 2017 남서울대학교 by 정우현.</p>
+		    </div>
+		</footer>
+
 	</body>
 	
 	
-<footer class="footer" id="footer1">
-    <div class ="container" >
-    	<p class="p">Copyright(C) 2017 남서울대학교 by 정우현.</p>
-    </div>
-</footer>

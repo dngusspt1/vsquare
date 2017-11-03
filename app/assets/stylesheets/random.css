@@ -7,6 +7,9 @@
     padding: 0;
     
   }
+  .desktop_hide{
+    display: none;
+  }
   #wheel{
       text-align: left;
       padding-bottom: 50px;
@@ -52,6 +55,9 @@
       background-position: center center;
       height:1366px;
   }
+  .desktop_hide{
+    display: none;
+  }
   #wheel{
       text-align: left;
       padding-bottom: 50px;
@@ -84,4 +90,73 @@
   .box{
     margin-left: 400px;
   }
+}
+@media screen and (max-width: 767px) {
+  body{
+    
+      position: relative;
+      margin:0;
+      padding:0;
+      background-image: url("https://vsquare-dngusspt1.c9users.io/bg.png");
+      background-size: cover;
+      background-position: center center;
+      height:667px;
+
+  }
+  #wheel{
+      text-align: left;
+      padding-bottom: 10px;
+  }
+
+  .mobile_hide{
+    display: none;
+  }
+  ul > li > label{
+      font-size: 10px;
+      color:rgb(44, 62, 80);
+      
+     
+  }
+  ul > li{
+    margin-top: 2px;
+    float: left;
+    margin : 5px;
+    
+  }
+
+  .vsquare{
+    font-size: 20px;
+    margin-left: 20px;
+    padding :20px;
+    padding-bottom: 10px;
+  }
+  #venues ul{
+    font-size:10px;
+  }
+  #wheel a{
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #16a085;
+  }
+  #canvas{
+    height: 300px;
+    width: 380px;
+  }
+  .box{
+    margin-left: 5px;
+  }
+  .footer2 {
+    padding-top:20px;
+    text-align: center;
+    background-color: #cccccc;
+    font-weight: 5px;
+    margin-top: 20px;
+    
+  }
+  .footer2 p{
+      font-size: 15px;
+  }
+
 }

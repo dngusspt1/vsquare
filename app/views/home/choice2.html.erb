@@ -1,7 +1,7 @@
 <header class ="header2">
     	<div class="hdtitle">
-    <div id="map" style="width:100%;height:600px;"></div>
-    <p class"=abtn">
+    <div id="map1" class="map"></div>
+    <p class="abtn">
 <button onclick="setZoomable(false)">지도 확대/축소 끄기</button>
 <button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
 </p>
@@ -9,7 +9,7 @@
 
           <script>
 
-var mapContainer = document.getElementById('map'), // 지도의 중심좌표
+var mapContainer = document.getElementById('map1'), // 지도의 중심좌표
     mapOption = { 
         center: new daum.maps.LatLng(37.500074, 127.040970), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
@@ -277,51 +277,51 @@ function setZoomable(zoomable) {
 <section id="portfolio">
     
       <div class="container">
-        <h1 class="text-center p">근처 식당들...</h1>
-          <div class="row">
+        <h1 class="text-center p">회사 근처 식당들...</h1>
+          <div class="row mobile_hide">
               
-             <div class="col-sm-4 portfolio-item">
+             <div class="col-xs-4 col-sm-4 portfolio-item">
                  <% @show.each do |t| %>  
                 <% if t.id == 10 %>
                   <img class="img-fluid2" src="../chonbbal/<%= t.image %>" alt="">
                   <a href="/first"><p class="one p" ><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 11 %>
                   <img class="img-fluid2" src="../mandoo/<%= t.image %>" alt="">
                    <a href="/second"> <p class="two p" ><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 12 %>
                   <img class="img-fluid2" src="../u-yeon/<%= t.image %>" alt="">
                   <a href="/third"><p class="three p"><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 13 %>
                   <img class="img-fluid2" src="../sado/<%= t.image %>" alt="">
                   <a href="/fourth"><p class="four p"><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 14 %>
                   <img class="img-fluid2" src="../ssal/<%= t.image %>" alt="">
                   <a href="/fifth"><p class="five p"><%= t.name %></p></a>
               </div>
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 15 %>
                   <img class="img-fluid2" src="../hotaru/<%= t.image %>" alt="">
                   <a href="/sixth"><p class="six p" ><%= t.name %></p></a>
               </div>
-               <div class="col-sm-4 portfolio-item">
+               <div class="col-xs-4 col-sm-4 portfolio-item">
                    <% elsif t.id == 16 %>
                   <img class="img-fluid2" src="../samda/<%= t.image %>" alt="">
                   <a href="/seventh"><p class="seven p"><%= t.name %></p></a>
               </div>
-               <div class="col-sm-4 portfolio-item">
+               <div class="col-xs-4 col-sm-4 portfolio-item">
                    <% elsif t.id == 17 %>
                   <img class="img-fluid2" src="../galbi/<%= t.image %>" alt="">
                   <a href="/eighth"><p class="eight p" ><%= t.name %></p></a>
               </div> 
-              <div class="col-sm-4 portfolio-item">
+              <div class="col-xs-4 col-sm-4 portfolio-item">
                   <% elsif t.id == 18 %>
                   <img class="img-fluid2" src="../mac./<%= t.image %>" alt="">
                   <a href="/ninth"><p class="nine p"><%= t.name %></p></a>
@@ -329,18 +329,73 @@ function setZoomable(zoomable) {
               </div>
                 
           </div>
-          <ul class="pagination" style="margin-left:470px;">
-                    <li><a href="/choice">1</a></li>
-                    <li><a href="/choice2">2</a></li>
-                    <li><a href="/ready">3</a></li>
-                    <li><a href="/ready">4</a></li>
-                    <li><a href="/ready">5</a></li>
-                </ul>
+           <div class="row desktop_hide">
+              
+             <div class="col-xs-4 col-sm-4 portfolio-item">
+                 <% @show.each do |t| %>  
+                <% if t.id == 28 %>
+                  <img class="img-fluid2" src="../m.chonbbal/<%= t.image %>" alt="">
+                  <a href="/first"><p class="one p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 29 %>
+                  <img class="img-fluid2" src="../m.mandoo/<%= t.image %>" alt="">
+                   <a href="/second"> <p class="two p" ><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 30 %>
+                  <img class="img-fluid2" src="../m.u-yeon/<%= t.image %>" alt="">
+                  <a href="/third"><p class="three p"><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 31 %>
+                  <img class="img-fluid2" src="../m.sado/<%= t.image %>" alt="">
+                  <a href="/fourth"><p class="four p"><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 32 %>
+                  <img class="img-fluid2" src="../m.ssal/<%= t.image %>" alt="">
+                  <a href="/fifth"><p class="five p"><%= t.name %></p></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 33 %>
+                  <img class="img-fluid2" src="../m.hotaru/<%= t.image %>" alt="">
+                  <a href="/sixth"><p class="six p" ><%= t.name %></p></a>
+              </div>
+               <div class="col-xs-4 col-sm-4 portfolio-item">
+                   <% elsif t.id == 34 %>
+                  <img class="img-fluid2" src="../m.samda/<%= t.image %>" alt="">
+                  <a href="/seventh"><p class="seven p"><%= t.name %></p></a>
+              </div>
+               <div class="col-xs-4 col-sm-4 portfolio-item">
+                   <% elsif t.id == 35 %>
+                  <img class="img-fluid2" src="../m.galbi/<%= t.image %>" alt="">
+                  <a href="/eighth"><p class="eight p" ><%= t.name %></p></a>
+              </div> 
+              <div class="col-xs-4 col-sm-4 portfolio-item">
+                  <% elsif t.id == 36 %>
+                  <img class="img-fluid2" src="../m.mac./<%= t.image %>" alt="">
+                  <a href="/ninth"><p class="nine p"><%= t.name %></p></a>
+                  
+              </div>
+                
+          </div>
+          
+                <% end %>
+              <% end %>
           <% end %>
       <% end %>
+      
       </div>
           
     </section>
+    <ul class="pagination">
+            <li><a href="/choice">1</a></li>
+            <li><a href="/choice2">2</a></li>
+            <li><a href="/ready">3</a></li>
+            <li><a href="/ready">4</a></li>
+            <li><a href="/ready">5</a></li>
+        </ul>
 
 
 <footer class="footer" id="footer1">
